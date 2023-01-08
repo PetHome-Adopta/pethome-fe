@@ -19,9 +19,6 @@ export default {
             let response;
 
             try {
-                console.log(process.env)
-                console.log(backend)
-                console.log(`TEST ${Backend[backend]}/${itemType}`)
                 response = await this.$axios.$get(`${Backend[backend]}/${itemType}`, { params: dataToSend });
                 
             } catch (e) {

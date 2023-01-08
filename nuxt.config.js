@@ -38,7 +38,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  publicRuntimeConfig: {
+  env: {
     BACKEND_API: process.env.BACKEND_API
   },
 
