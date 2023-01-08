@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'IndexPage',
+  name: 'About',
   setup() {
     const layout = 'default';
   },
@@ -33,6 +33,6 @@ export default defineComponent({
 
 <template>
   <div>
-    <PetsListGrid/>
+    <h1>TEST ABOUT</h1>
   </div>
 </template>
