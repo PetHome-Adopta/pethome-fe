@@ -13,3 +13,7 @@ export default defineComponent({
     <Footer/>
   </div>
 </template>
+
+<style>
+@import "@/@core/css/main.css"
+</style>
