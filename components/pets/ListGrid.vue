@@ -8,7 +8,7 @@ export default defineComponent({
     await this.$store.dispatch("getItems", {backend: Backends.API, itemType: "api/v1/pets", requestConfig: {}, customName: "pets", page: 1})
     console.log('pets: ', this.pets?.data)
   },
-  async computed(){
+  computed: {
     pets() {
       return this.$store.getters.pets;
     }
