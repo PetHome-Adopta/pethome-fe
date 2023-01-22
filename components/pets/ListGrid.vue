@@ -1,11 +1,12 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { Backends } from '~/@core/backendList'
 
 export default defineComponent({
   name: 'PetsListGrid',
   async created() {
-    await this.fetchData()
+    await this.fetchData();
+    console.log('pets: ', this.$store.getters.items.pets.items);
   },
   methods: {
     async fetchData() {
