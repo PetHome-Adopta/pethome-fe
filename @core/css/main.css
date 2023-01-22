@@ -1,0 +1,14 @@
+
+.pet-card .pet-image img{
+    width: 100%;
+    height: 250px;
+}
+
+.pet-card .pet-image .urgent{
+    font-size: 1.3em;
+    background-color: rgb(255, 166, 0);
+}
+
+.pet-card h4 {
+    color: rgb(255, 166, 0);
+}

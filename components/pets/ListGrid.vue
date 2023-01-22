@@ -1,26 +1,36 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { Backends } from '~/@core/backendList';
+import { Backends } from '~/@core/backendList'
 
 export default defineComponent({
   name: 'PetsListGrid',
   async created() {
-    await this.$store.dispatch("getItems", {backend: Backends.API, itemType: "api/v1/pets", requestConfig: {}, customName: "pets", page: 1})
+    await this.fetchData();
     console.log('pets: ', this.$store.getters.items.pets.items);
+  },
+  methods: {
+    async fetchData() {
+      await this.$store.dispatch('getItems', {
+        backend: Backends.API,
+        itemType: 'api/v1/pets',
+        requestConfig: {},
+        customName: 'pets',
+        page: 1,
+      })
+    },
   },
   computed: {
     pets() {
-      return this.$store.getters.items.pets?.items;
-    }
-  }
+      return this.$store.getters.items?.pets?.items
+    },
+  },
 })
-
 </script>
 <template>
-  <div>
+  <div class="p-5">
     <b-row>
-      <b-col v-for="pet in pets" :key="pet.id">
-        {{ pet.name }}
+      <b-col cols="3" v-for="pet of pets" :key="pet.key">
+        <PetsItem :pet="pet" />
       </b-col>
     </b-row>
   </div>
