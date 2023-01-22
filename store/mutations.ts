@@ -22,6 +22,7 @@ export default {
             }
 
             Vue.set(state[payload.itemType], "items", [...state[payload.itemType].items, ...payload.data]);
+            Vue.set(state[payload.itemType], "meta", {page: payload.page});
             state[payload.itemType].paginated[payload.page] = [...payload.data];
 
         } catch (e) {

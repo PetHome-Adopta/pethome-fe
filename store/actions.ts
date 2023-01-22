@@ -12,7 +12,7 @@ export default {
 
             const stateName: string = getStateName(itemType, customName);
 
-            if (!checkPersistence(state, stateName, dataToSend.page ?? 1) && !forceAPICall) {
+            if (!checkPersistence(state, stateName, dataToSend.page || 1) && !forceAPICall) {
                 return;
             }
 
@@ -28,7 +28,7 @@ export default {
             const payload = {
                 itemType: stateName,
                 data: response.data,
-                page: dataToSend.page ?? 1,
+                page: dataToSend.page || 1,
                 forceAPICall,
             }
 
