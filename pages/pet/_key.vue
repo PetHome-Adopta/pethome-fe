@@ -33,6 +33,18 @@ export default {
 
 <template>
     <div>
-        {{ pet }}
+        <b-container class="bv-example-row bv-example-row-flex-cols">
+            <b-row align-v="start">
+                <b-col>{{ pet?.name }} , {{ pet?.age }}</b-col>
+                <b-col/>
+                <b-col><img src="default.jpg" class="rounded" /></b-col>
+            </b-row>
+            <b-row align-v="center">
+                <b-col> Location </b-col>
+            </b-row>
+            <b-row align-v="end">
+                <b-col>{{ pet?.description }}</b-col>
+            </b-row>
+        </b-container>
     </div>
 </template>
