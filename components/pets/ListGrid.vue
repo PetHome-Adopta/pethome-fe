@@ -6,7 +6,6 @@ export default defineComponent({
   name: 'PetsListGrid',
   async created() {
     await this.fetchData();
-    console.log('pets: ', this.$store.getters.items.pets.items);
   },
   methods: {
     async fetchData() {
