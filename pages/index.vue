@@ -33,6 +33,7 @@ export default defineComponent({
 
 <template>
   <div>
+    <PetsSlider />
     <PetsListGrid/>
   </div>
 </template>

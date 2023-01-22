@@ -30,7 +30,9 @@ export default defineComponent({
   <div class="p-5">
     <b-row>
       <b-col cols="3" v-for="pet of pets" :key="pet.key">
-        <PetsItem :pet="pet" />
+        <NuxtLink :to="{name: 'about'}">
+          <PetsItem :pet="pet" />
+        </NuxtLink>
       </b-col>
     </b-row>
   </div>
