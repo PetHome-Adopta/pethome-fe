@@ -14,7 +14,7 @@ export default defineComponent({
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#">Inicio</b-nav-item>
-        <b-nav-item href="#">Sobre nosotros</b-nav-item>
+        <b-nav-item :to="{name: 'about'}">Sobre nosotros</b-nav-item>
         <b-nav-item href="#">Animales</b-nav-item>
         <b-nav-item href="#">Protectoras</b-nav-item>
       </b-navbar-nav>
