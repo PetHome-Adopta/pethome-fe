@@ -1,11 +1,24 @@
-<template>
-  <div>
-    {{ key }}
-  </div>
-</template>
-
 <script>
+import { Backends } from '~/@core/backendList'
+
 export default {
+    async created(){
+        if(this.$store.getters.item("pets", this.key)) {
+            return;
+        }
+        await this.fetchData();
+    },
+    methods: {
+        async fetchData(){
+            await this.$store.dispatch('getItems', {
+                backend: Backends.API,
+                itemType: 'api/v1/pets',
+                requestConfig: { key: this.key },
+                customName: 'pets',
+                page: 1,
+            })
+        }
+    },
     computed: {
         pet(){
             return this.$store.getters.item("pets", this.key);
@@ -14,16 +27,12 @@ export default {
             return this.$route.params.key;
         }
     },
-    created(){
-        if(this.$store.getters.item("pets", this.key)) {
-            return;
-        }
-        console.log("Hago fetch")
-    },
 
 }
 </script>
 
-<style>
-
-</style>
+<template>
+    <div>
+        {{ pet }}
+    </div>
+</template>

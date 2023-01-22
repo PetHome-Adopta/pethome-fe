@@ -1,5 +1,5 @@
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import { Backends } from '~/@core/backendList'
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
   <div class="p-5">
     <b-row>
       <b-col cols="3" v-for="pet of pets" :key="pet.key">
-        <NuxtLink :to="{name: 'pet-key', params: { key: 'abc' } }">
+        <NuxtLink :to="{name: 'pet-key', params: { key: pet.key } }">
           <PetsItem :pet="pet" />
         </NuxtLink>
       </b-col>
