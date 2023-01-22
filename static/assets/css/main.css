@@ -23,23 +23,23 @@
 }
 
 .primary {
-    background-color: var(--principalColor);
-    border: 1px solid var(--principalColor);
+    background-color: var(--principalColor) !important;
+    border: 1px solid var(--principalColor) !important;
 }
 
-.primary:hover {
-    background-color: var(--hoverPrincipal);
-    border: 1px solid var(--hoverPrincipal);
+.primary:hover, .primary:active{
+    background-color: var(--hoverPrincipal) !important;
+    border: 1px solid var(--hoverPrincipal) !important;
 }
 
 .secondary {
-    background-color: var(--secondaryColor);
-    border: 1px solid var(--secondaryColor);
+    background-color: var(--secondaryColor) !important;
+    border: 1px solid var(--secondaryColor) !important;
 }
 
-.secondary:hover {
-    background-color: var(--secondaryColorHover);
-    border: 1px solid var(--secondaryColor);
+.secondary:hover, .secondary:active {
+    background-color: var(--secondaryColorHover) !important;
+    border: 1px solid var(--secondaryColor) !important;
 }
 
 .primary-text {
