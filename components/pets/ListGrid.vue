@@ -6,11 +6,11 @@ export default defineComponent({
   name: 'PetsListGrid',
   async created() {
     await this.$store.dispatch("getItems", {backend: Backends.API, itemType: "api/v1/pets", requestConfig: {}, customName: "pets", page: 1})
-    console.log('pets: ', this.pets?.data)
+    console.log('pets: ', this.$store.getters.items.pets.items);
   },
   computed: {
     pets() {
-      return this.$store.getters.pets;
+      return this.$store.getters.items.pets?.items;
     }
   }
 })
@@ -18,11 +18,6 @@ export default defineComponent({
 </script>
 <template>
   <div>
-    <b-row>
-        <b-col>1 of 3</b-col>
-        <b-col>2 of 3</b-col>
-        <b-col>3 of 3</b-col>
-    </b-row>
     <b-row>
       <b-col v-for="pet in pets" :key="pet.id">
         {{ pet.name }}
