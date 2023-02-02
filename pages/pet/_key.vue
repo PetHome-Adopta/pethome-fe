@@ -6,11 +6,6 @@ export default {
         if(!this.$store.getters.item("pets", this.key)) {
             await this.fetchDataPet();
         }
-        console.log("Pet: ", this.$store.getters.item("pets"));
-        console.log("Shelter key: ", this.$store.getters.item("pets")?.shelterKey);
-        console.log("after Shelter: ", this.$store.getters.item("shelters"));
-        await this.fetchDataShelter();
-        console.log("before Shelter: ", this.$store.getters.item("shelters"));
     },
     methods: {
         async fetchDataPet(){
@@ -23,8 +18,9 @@ export default {
             });
         },
         async fetchDataShelter(){
-            console.log("fetch shelters");
-            console.log("this pet: ", this.pet);
+            if(!this.pet)
+                return;
+
             await this.$store.dispatch('getItems', {
                 backend: Backends.API,
                 itemType: 'api/v1/shelters',
@@ -34,11 +30,21 @@ export default {
             });
         }
     },
+    watch: {
+        pet(newValue){
+            this.fetchDataShelter();
+        },
+        shelter(){
+            //this.key = randomS
+        }
+    },
     computed: {
         pet(){
             return this.$store.getters.item("pets", this.key);
         },
         shelter(){
+            console.log('computed key ', this.pet?.shelterKey);
+            console.log('computed ', this.$store.getters.item("shelters", this.pet?.shelterKey));
             return this.$store.getters.item("shelters", this.pet?.shelterKey);
         },
         key() {
