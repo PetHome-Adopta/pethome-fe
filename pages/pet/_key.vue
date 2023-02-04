@@ -35,7 +35,7 @@ export default {
             this.fetchDataShelter();
         },
         shelter(){
-            //this.key = randomS
+            this.key = (Math.random() + 1).toString(36).substring(7);
         }
     },
     computed: {
