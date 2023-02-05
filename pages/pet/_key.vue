@@ -35,6 +35,7 @@ export default {
             this.fetchDataShelter();
         },
         shelter(){
+            console.log("TEST 0", this.$store.getters.item("shelters", this.pet?.shelterKey));
             this.key = (Math.random() + 1).toString(36).substring(7);
         }
     },
@@ -43,9 +44,11 @@ export default {
             return this.$store.getters.item("pets", this.key);
         },
         shelter(){
-            console.log('computed key ', this.pet?.shelterKey);
-            console.log('computed ', this.$store.getters.item("shelters", this.pet?.shelterKey));
-            return this.$store.getters.item("shelters", this.pet?.shelterKey);
+            console.log("TEST 1", this.pet?.shelterKey);
+            const t = this.$store.getters.item("shelters", this.pet?.shelterKey);
+            //TODO: t tiene valor pero no lo esta devolviendo correctamente, el fetch a la api es correcto
+            console.log("TEST 2", t);
+            return t;
         },
         key() {
             return this.$route.params.key;
