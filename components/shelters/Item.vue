@@ -28,12 +28,3 @@ export default defineComponent({
     </div>
   </div>
 </template>
-<style lang="css">
-a {
-  color: black !important;
-  text-decoration: none !important;
-}
-a:hover {
-  text-decoration: none !important;
-}
-</style>

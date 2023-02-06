@@ -36,3 +36,12 @@ export default defineComponent({
     </b-row>
   </div>
 </template>
+<style lang="css" scoped>
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+</style>
