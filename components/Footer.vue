@@ -8,22 +8,24 @@ export default defineComponent({
 </script>
 <template>
   <div class="footer w-100">
-    <h5 class="mb-5 ml-5">Pethome</h5>
-    <b-row class="mx-auto">
-      <b-col sm="12" md="6">
+    <h3 class="mb-5 ml-5">Pethome</h3>
+    <div class="w-75 ml-5">
+    <div class="d-flex flex-wrap justify-content-between">
+      <div class="flex-item">
         <ul class="mx-auto">
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Contactanos</a></li>
-          <li><a href="#">Participar</a></li>
+          <li><NuxtLink :to="{name: 'about'}">Sobre nosotros</NuxtLink></li>
+          <li><NuxtLink :to="{name: 'contact'}">Contactanos</NuxtLink></li>
+          <li><NuxtLink :to="{name: 'register'}">Participar</NuxtLink></li>
         </ul>
-      </b-col>
-      <b-col sm="12" md="6">
+      </div>
+      <div class="flex-item">
         <ul class="mx-auto">
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Contactanos</a></li>
-          <li><a href="#">Participar</a></li>
+          <li><NuxtLink :to="{name: 'pets'}">Animales</NuxtLink></li>
+          <li><NuxtLink :to="{name: 'shelters'}">Protectoras</NuxtLink></li>
+          <li><NuxtLink :to="{name: 'login'}">Entrar</NuxtLink></li>
         </ul>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
+    </div>
   </div>
 </template>
